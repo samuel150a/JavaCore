@@ -28,29 +28,29 @@ import javax.persistence.*;
 
 @NamedQuery(
         name = "updateById",
-        query = "UPDATE InteriorEntity e SET e.type = :type, e.shop = :shop WHERE e.ID = :ID"
-)
+        query = "UPDATE InteriorEntity e SET e.type = :type, e.shop = :shop WHERE e.ID = :ID")
 @NamedQuery(name="updateByPrice",
-        query="UPDATE InteriorEntity p SET p.variety=:variety WHERE p.price=:price "
-      )
-
-
+        query="UPDATE InteriorEntity p SET p.variety=:variety WHERE p.price=:price ")
 @NamedQuery(name="updateByShop"
-        ,query="update InteriorEntity s set s.wood=:wood where s.shop=:shop And s.ID=:ID "
-)
+        ,query="update InteriorEntity s set s.wood=:wood where s.shop=:shop And s.ID=:ID ")
+//06/08/25
+
+
 
 @NamedQuery(name="getAllVarietynames"
         ,query="select v.variety from InteriorEntity v")
 
 @NamedQuery(name="getAllPrice"
-          ,query="select p.price from InteriorEntity p"
-)
+          ,query="select p.price from InteriorEntity p")
+
 @NamedQuery(name="getAllWood"
-        ,query="select w.wood from InteriorEntity w"
-)
+        ,query="select w.wood from InteriorEntity w")
+
 @NamedQuery(name="FetchTwoColumns"
-        ,query="select i.ID , i.variety from InteriorEntity i"
-)
+        ,query="select i.ID , i.variety from InteriorEntity i")
+
+@NamedQuery(name="FetchThreeColumns"
+         ,query="select t.type, t.shop,t.variety from InteriorEntity t"   )
 
 
 public class InteriorEntity {
