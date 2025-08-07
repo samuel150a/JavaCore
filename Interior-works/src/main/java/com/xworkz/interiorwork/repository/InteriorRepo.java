@@ -34,5 +34,7 @@ public interface InteriorRepo {
     List<Object[]> FetchTwoColumns();
 
 
+//06-08-25
 
+    List<Object[]> FetchThreeColumns();
 }
