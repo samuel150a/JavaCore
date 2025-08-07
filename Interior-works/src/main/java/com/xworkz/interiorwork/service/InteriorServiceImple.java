@@ -7,6 +7,7 @@ import com.xworkz.interiorwork.runner.InteriorRunner;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import static sun.plugin2.liveconnect.ArgumentHelper.validate;
 
@@ -109,6 +110,7 @@ public class InteriorServiceImple implements InteriorService{
         return interiorRepo.getInteriorEntityBydoordelivery(doordelivery);
     }
 
+
     @Override
     public List<InteriorEntity> fetchAllInterior(InteriorEntity entity) {
         return interiorRepo.fetchAllInterior(entity);
@@ -123,4 +125,51 @@ public class InteriorServiceImple implements InteriorService{
     public List<InteriorEntity> getBYSpecificvariety(String entity) {
         return interiorRepo.getBYSpecificvariety(entity);
     }
+    @Override
+    public InteriorEntity findByNameByTypedQuery(String n) {
+        return interiorRepo.findByNameByTypedQuery(n);
+    }
+
+    @Override
+    public InteriorEntity updateById(String updatedType,String updatedShop,Integer Id)
+    {
+        return interiorRepo.updateById(updatedType,updatedShop,Id);
+    }
+
+    @Override
+    public InteriorEntity updateByPrice(String updatedVariety, Integer Price) {
+        return interiorRepo.updateByPrice(updatedVariety,Price);
+    }
+
+    @Override
+    public InteriorEntity updateByShop(Boolean updateWood, String updateShop, Integer Id) {
+        return interiorRepo.updateByShop(updateWood,updateShop,Id);
+    }
+
+    @Override
+    public List<String> getAllVarietynames() {
+        return interiorRepo.getAllVarietynames();
+    }
+
+    @Override
+    public List<Integer> getAllPrice() {
+        return interiorRepo.getAllPrice();
+    }
+
+    @Override
+    public List<Object> getAllWood() {
+        return interiorRepo.getAllWood();
+    }
+
+    @Override
+    public List<Object[]> FetchTwoColumns() {
+        return interiorRepo.FetchTwoColumns();
+    }
+
+    @Override
+    public List<Object[]> FetchThreeColumns() {
+        return interiorRepo.FetchThreeColumns();
+    }
+
+
 }
