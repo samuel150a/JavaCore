@@ -874,5 +874,34 @@ public class InteriorRepoImple implements InteriorRepo {
 
     }
 
+    @Override
+    public List<Object[]> FetchThreeColumns() {
+        System.out.println("running in the FetchThreeColumns");
+        List<Object[]> entityFetchThreeColumns=null;
+        try{
+            entityFetchThreeColumns= entityManagerFactory.createEntityManager().createNamedQuery("FetchThreeColumns")
+                    .getResultList();
+        }
+        catch (PersistenceException e) {
+            System.out.println("Exception has been found");
+            System.out.println(e.getMessage());
+            //e.printStackTrace();
+
+        }
+        finally {
+            if (entityManagerFactory != null) {
+                entityManagerFactory.close();
+                System.out.println("entityManagerFactory is closed");
+            }
+            if (entityManager != null) {
+                entityManager.close();
+                System.out.println("entityManager is closed");
+            }
+
+
+        }
+        return entityFetchThreeColumns;
+    }
+
 }
 
